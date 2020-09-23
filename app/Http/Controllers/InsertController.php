@@ -19,7 +19,6 @@ class InsertController extends Controller
         $paginas = $request->input('paginas');
         $texto = $request->input('texto');
         DB::insert('insert into pdf_files (ficheiro, criador, data, paginas, texto) values(?,?,?,?,?)',[$ficheiro,$criador,$data,$paginas,$texto]);
-        echo "Os registos foram adicionados com sucesso!.<br/>";
-        echo '<a href = "/insert">Click Here</a> to go back.';
+        return view('post');
     }
 }

@@ -15,6 +15,12 @@
                 height: 100vh;
             }
 
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
             .position-ref {
                 position: relative;
             }
@@ -105,7 +111,7 @@ $pdf    = $parser->parseFile("$link");
 $details  = $pdf->getDetails();
 
 
-echo "<form action='/add' method='post'>
+echo "<form action='/add' method='post' id='pdfform'>
     <input type='hidden' name='_token' value=".csrf_token().">
     <fieldset>
         <legend style='color:#4CAF50'>METADATA</legend>
@@ -153,7 +159,7 @@ foreach ($pages as $p) {
                 <legend style="color:#4CAF50">PÁGINA '.$count.'</legend>
                 <div>
                     <div>';
-    echo $p->getText();
+    echo $text= $p->getText();
     echo '
                 </div>
             </div>
@@ -161,9 +167,7 @@ foreach ($pages as $p) {
     $count++;
 }  
 
-echo    '<input type = "hidden" name="texto" value = '.$alltext.'">
-        </form> ';
-        
+echo "<textarea style='display:none' name='texto' form='pdfform'>$text</textarea>";
 
 ?>
 <button id="anchor" type="button" class="voltar" onclick="window.location='{{ asset('/') }}'">VOLTAR</button>
