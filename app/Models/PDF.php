@@ -16,7 +16,7 @@ class PDF extends Model
 	 * @var array
 	 */
     protected $fillable = [
-        'ficheiro', 'texto',
+        'ficheiro', 'criador','created_at','pages','texto',
     ];
 
     public function get_pdfs() {

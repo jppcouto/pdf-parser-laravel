@@ -95,7 +95,8 @@
                     <input type="file" name="file"  accept="application/pdf" >
                     <button type="submit" name="submit">Carregar</button>
                 </form>
-        </div>
+                
+            </div>
     </div>    
 
 </body>

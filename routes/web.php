@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/db', 'DBController@db')->name('db');
 
 //carregamento do pdf
-Route::get('/', 'UploadController@uploadForm');
+Route::get('/', 'UploadController@uploadForm')->name('home');
 Route::post('/', 'UploadController@uploadFile')->name('uploadFile');
 
 //adicionar pdf para a BD

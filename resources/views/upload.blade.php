@@ -1,4 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
         <style>
             html, body {
                 background-color: #fff;
@@ -43,7 +45,7 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
 
             input[type=submit] {
@@ -63,12 +65,34 @@
             background-color: #45a049;
             }
 
+            .voltar {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            margin-bottom: 20px;
+            }
+
         </style>
 
-<?php
-echo "<div class=\"title m-b-md\">O PDF foi carregado com sucesso!<br></div>";
 
-        
+<div class="title m-b-md">
+    O PDF foi carregado com sucesso! 
+    <a href="#anchor"><i class='fas fa-arrow-alt-circle-down' style='font-size:48px;color:#4CAF50'></i></a>
+</div>
+
+
+
+<?php
 // Include Composer autoloader if not already done.
 include base_path() . '/vendor/autoload.php';
 
@@ -139,5 +163,7 @@ foreach ($pages as $p) {
 
 echo    '<input type = "hidden" name="texto" value = '.$alltext.'">
         </form> ';
+        
 
 ?>
+<button id="anchor" type="button" class="voltar" onclick="window.location='{{ asset('/') }}'">VOLTAR</button>
