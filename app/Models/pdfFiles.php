@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class PDF extends Model
+class pdfFiles extends Model
 {
-    protected $table = 'pdf';
+    protected $table = 'pdf_files';
 	public $timestamps = true;
 	/**
 	 * The attributes that are mass assignable.
@@ -16,15 +16,15 @@ class PDF extends Model
 	 * @var array
 	 */
     protected $fillable = [
-        'ficheiro', 'criador','created_at','pages',
+        'ficheiro', 'criador','data','paginas','texto',
     ];
 
     public function get_pdfs() {
-        return DB::select('select * from p_d_f_s');
+        return DB::select('select * from pdf_files');
     }
 
     public function add_pdf() {
-        return DB::insert("INSERT INTO p_d_f_s VALUES (0,$ficheiro,'$texto')");
+        return DB::insert("INSERT INTO pdf_files VALUES (0,$ficheiro,'$texto')");
     }
 
 }

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\PDF;
+use App\Models\pdfdata;
+use App\Models\pdfFiles;
 
 class DBController extends Controller
 {
@@ -14,7 +15,7 @@ class DBController extends Controller
             echo '<p>'.$u->nome.'</p>';
         }
         */    
-        $pdf = new PDF();
+        $pdf = new pdfFiles();
         $resultados = $pdf->get_pdfs();
         dd($resultados);
     }

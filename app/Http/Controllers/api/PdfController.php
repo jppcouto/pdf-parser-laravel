@@ -4,7 +4,8 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\PDF;
+use App\Models\pdfdata;
+use App\Models\pdfFiles;
 
 class PdfController extends Controller
 {
@@ -15,7 +16,7 @@ class PdfController extends Controller
      */
     public function index()
     {
-        return PDF::all();
+        return pdfFiles::all();
     }
 
     /**
@@ -36,7 +37,7 @@ class PdfController extends Controller
      */
     public function store(Request $request)
     {
-        PDF::create($request->all());
+        pdfFiles::create($request->all());
     }
 
     /**
@@ -47,7 +48,7 @@ class PdfController extends Controller
      */
     public function show($id)
     {
-        return PDF::findOrFail($id);
+        return pdfFiles::findOrFail($id);
     }
 
     /**
@@ -70,7 +71,7 @@ class PdfController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pdf = PDF::findOrFail($id);
+        $pdf = pdfFiles::findOrFail($id);
         $pdf->update($request->all());
     }
 
@@ -82,7 +83,7 @@ class PdfController extends Controller
      */
     public function destroy($id)
     {
-        $pdf = PDF::findOrFail($id);
+        $pdf = pdfFiles::findOrFail($id);
         $pdf->delete();
     }
 }

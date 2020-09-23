@@ -105,7 +105,7 @@ $pdf    = $parser->parseFile("$link");
 $details  = $pdf->getDetails();
 
 
-echo "<form action='' method='post'>
+echo "<form action='/add' method='post'>
     <input type='hidden' name='_token' value=".csrf_token().">
     <fieldset>
         <legend style='color:#4CAF50'>METADATA</legend>
@@ -114,19 +114,19 @@ echo "<form action='' method='post'>
                 <table>
                     <tr>
                         <td style='font-weight: bold'>Nome:</td>
-                        <td><input type='text' name='stud_name' value=".$path."></td>
+                        <td><input type='text' name='ficheiro' value=".$path."></td>
                     </tr>
                     <tr>
                         <td style='font-weight: bold'>Criador:</td>
-                        <td><input type='text' name='stud_name' value=".$details['Producer']." disabled></td>
+                        <td><input type='text' name='criador' value=".$details['Producer']." ></td>
                     </tr>
                     <tr>
                         <td style='font-weight: bold'>Data de criação:</td>
-                        <td><input type='text' name='stud_name' value=".$details['CreationDate']." disabled></td>
+                        <td><input type='text' name='data' value=".$details['CreationDate']." ></td>
                     </tr>
                     <tr>
                         <td style='font-weight: bold'>Páginas:</td>
-                        <td><input type='text' name='stud_name' value=".$details['Pages']." disabled></td>
+                        <td><input type='text' name='paginas' value=".$details['Pages']." ></td>
                     </tr>
                     <tr>
                         <td colspan=2>

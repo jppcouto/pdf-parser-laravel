@@ -21,4 +21,4 @@ Route::post('/', 'UploadController@uploadFile')->name('uploadFile');
 
 //adicionar pdf para a BD
 Route::get('insert','InsertController@insertform');
-Route::post('create','InsertController@insert');
+Route::post('add','InsertController@add');

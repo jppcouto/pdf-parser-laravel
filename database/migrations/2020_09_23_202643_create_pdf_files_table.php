@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePDFSTable extends Migration
+class CreatePdfFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePDFSTable extends Migration
      */
     public function up()
     {
-        Schema::create('p_d_f_s', function (Blueprint $table) {
-            $table->id();
-            $table->string('ficheiro', 200);
-            $table->string('criador', 100);
-            $table->string('created_at', 100);
-            $table->integer('pages', 10);
+        Schema::create('pdf_files', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('ficheiro');
+            $table->string('criador');
+            $table->string('data');
+            $table->integer('paginas');
             $table->text('texto');
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 
@@ -31,6 +31,6 @@ class CreatePDFSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('p_d_f_s');
+        Schema::dropIfExists('pdf_files');
     }
 }
