@@ -16,10 +16,6 @@
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 50vh;
-                margin-top: 10px;
-                margin-left: 20px;
-                margin-right: 20px;
             }
 
             .full-height {
@@ -59,10 +55,6 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
         </style>
 
 </head>
@@ -95,7 +87,7 @@
                     <input type="file" name="file"  accept="application/pdf" >
                     <button type="submit" name="submit">Carregar</button>
                 </form>
-                
+
             </div>
     </div>    
 

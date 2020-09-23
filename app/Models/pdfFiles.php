@@ -22,9 +22,4 @@ class pdfFiles extends Model
     public function get_pdfs() {
         return DB::select('select * from pdf_files');
     }
-
-    public function add_pdf() {
-        return DB::insert("INSERT INTO pdf_files VALUES (0,$ficheiro,'$texto')");
-    }
-
 }
