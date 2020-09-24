@@ -9,7 +9,7 @@
 
 ## About the App
 
-Laravel web API that reads PDF file and returns a JSON with data related to the same file.
+Built with Laravel, this simple web application API is able to read PDF file and return a JSON with data related to the same file.
 
 ## License
 
